@@ -4,6 +4,7 @@ import android.graphics.drawable.Icon
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -118,7 +119,8 @@ fun MainApp(modifier: Modifier = Modifier) {
     }
 }
 
-fun calculateTip(amount: String, tip: String, round: Boolean): String {
+@VisibleForTesting
+internal fun calculateTip(amount: String, tip: String, round: Boolean): String {
     var new_amount: Double = amount.toDoubleOrNull() ?: 0.0
     var new_tip: Double = tip.toDoubleOrNull() ?: 0.0
 
